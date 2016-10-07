@@ -4,7 +4,8 @@ const initiallecturePageState = {
 	lecture: {
 		name:"",
 		courses:[],
-		professor:0
+		professor:0,
+		status: -1,
 	},
 }
 

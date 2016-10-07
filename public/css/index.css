@@ -30,6 +30,7 @@ body.view-lecture {
 	max-width: 1250px;
 	margin:40px auto;
 	box-sizing: border-box;
+	padding: 0px 20px;
 }
 
 .professor-board-header {
@@ -76,14 +77,37 @@ body.view-lecture {
 
 
 
-
+.course-list-wrapper {
+	
+}
 
 .course-list {
 	
 }
-
+.lecture-header {
+	padding: 10px 0px;	
+}
+.lecture-header-name, .lecture-header-professor, .lecture-header-status {
+	display: inline-block;
+	color:white;
+	height: 40px;
+	line-height: 40px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	margin-left: 10px;
+	font-weight: bold;	
+}
+.lecture-header-name {
+	font-size: 18px;
+}
+.lecture-header-professor {
+	font-size: 12px;
+}
+.course-card:first-child {
+	margin-left: 10px;
+}
 .course-card {
-	    width: 270px;
+	   width: 270px;
     margin: 0 5px;
     height: 100%;
     box-sizing: border-box;

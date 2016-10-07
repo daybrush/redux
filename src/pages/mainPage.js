@@ -17,7 +17,9 @@ class mainPage extends Component {
   render() {
 	const {state, actions} = this.props
     return (
+    	<section className="content">
         <ProfessorList professors={state.professors} actions={actions}/>
+        </section>
     )
   }
 }

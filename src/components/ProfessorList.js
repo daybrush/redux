@@ -12,13 +12,11 @@ export default class ProfessorList extends Component {
     console.log(professors);
 
     return (
-      <section className="content">
         <div className="professor-list">
           {professors.map(professor =>
             <ProfessorBoard professor={professor} key={professor.id} />
           )}
         </div>
-      </section>
     )
   }
 }

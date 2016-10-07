@@ -66,31 +66,18 @@ export const fetchCourse = (actions, id) => {
 };
 
 
-export const addCourse = (actions, lectureId) => {
-	let lecture = {
-		    name: '실전프로젝트',
-		    id: 0,
-		    courses:[
+export const addCourse = (actions, title, professorId) => {
+	let course =
 		  {
 		    name: '실프1-1',
 		    id: 0,
 		    course: 0
-		  },
-		  {
-		    name: '실프1-2',
-		    id: 1,
-		    course: 0
-		  }
-		],
-	    professor:{
-		    name: '박재성',
-		    id: 0
-		  },
 		  };
+		  
 	return new Promise((resolve, reject) => {
 		setTimeout(()=>{
-			actions.loadCourseAll(lecture);
-			resolve(lecture);
+			//actions.loadCourseAll(lecture);
+			resolve(course);
 		}, 1000);
 	});
 };
@@ -99,6 +86,7 @@ export const fetchLoadCourseAll = (actions, lectureId) => {
 	let lecture = {
 		    name: '실전프로젝트',
 		    id: 0,
+		    status : 0,
 		    courses:[
 		  {
 		    name: '실프1-1',

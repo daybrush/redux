@@ -21,16 +21,18 @@ class CourseListPage extends Component {
 */
 	}
 	renderHeader() {
-		const {name, professor} = this.props.state.lecture;
+		const {name, professor, status} = this.props.state.lecture;
 		if(!professor)
 			return;
 			
 		console.log(name, professor);
 		return (
-			<div className="board-header">
-				<div className="board-header-title">{name}</div>
-				<div className="board-header-professor">{professor.name}</div>				
+			<div className="lecture-header">
+				<div className="lecture-header-name">{name}</div>
+				<div className="lecture-header-professor">{professor.name}</div>				
+				<div className="lecture-header-status">{status}</div>
 			</div>
+			
 		)
 	}
 	render() {
@@ -39,7 +41,7 @@ class CourseListPage extends Component {
 		const lecture = this.props.state.lecture;
   		const {courses} = lecture;
   		return (
-  		<div>
+  		<div className="course-list-wrapper">
   			{this.renderHeader()}
   			<div className="course-list">
 	  			{courses.map(course =>
