@@ -1,0 +1,123 @@
+body {
+	
+}
+body.view-lecture {
+	background-color: rgb(0, 121, 191);
+}
+#header {
+    background: #026AA7;
+    overflow: hidden;
+    padding: 5px;
+    z-index: 10;
+    height: 30px;
+}
+
+.header-logo {
+    display: block;
+    left: 50%;
+    margin-left: -50px;
+    top: 5px;
+    z-index: 2;
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    height: inherit;
+    line-height: 30px;
+    color: white;
+}
+
+.content {
+	max-width: 1250px;
+	margin:40px auto;
+	box-sizing: border-box;
+}
+
+.professor-board-header {
+	padding-bottom: 10px;
+}
+.professor-board-header i {
+	font-size: 18px;
+	height: 30px;
+	line-height: 30px;
+	color:#777;
+}
+.professor-board-header .professor-board-header-name {
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 10px;
+}
+
+.lecture-list li {
+	width: 25%;
+	display: inline-block;
+	padding: 0px 10px 10px 0px;
+	box-sizing: border-box;
+}
+.lecture-list li a.lecture-title {
+	padding: 10px 10px 20px;
+	background: #026AA7;
+	border-radius: 5px;
+	display: block;
+	min-height: 60px;
+}
+.lecture-card-options {
+	display: none;
+}
+
+.lecture-title-name {
+    font-size: 16px;
+    color:white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+
+
+
+.course-list {
+	
+}
+
+.course-card {
+	    width: 270px;
+    margin: 0 5px;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.course-card-content {
+    background: #E2E4E6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+}
+.add-course-card-content {
+    background: rgba(0,0,0,.12);
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+}
