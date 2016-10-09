@@ -15,11 +15,13 @@ export default class CourseCard extends Component {
     return (
       <div className="course-card">
 	       <div className="course-card-content">
+	       		<Link to={"/view/" + lectureId}>
 	        	<h2 title="실전 프로젝트" dir="auto" className="course-title-name">{name}</h2>
 	        	<ul className="course-card-goals">
 	        		<li>goal1</li>
 	         		<li>goal2</li>
 	        	</ul>
+	        	</Link>
         	</div>
       </div>
     )
