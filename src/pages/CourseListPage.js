@@ -4,21 +4,20 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import CourseCard from '../components/CourseCard'
 import AddCourseCard from '../components/AddCourseCard'
+import Viewer from '../components/Viewer'
 
 class CourseListPage extends Component {
 	
 	componentWillMount() {
 		document.body.className = "view-lecture";
 		const {actions, params} = this.props;
-		const lectureId = params.lectureId;
-		NEXTActions.fetchLoadCourseAll(actions, lectureId);
-/*
-		NEXTActions.fetchLectureByCourse(actions, lectureId);
-		NEXTActions.fetchCourse(actions, courseId).then((course) => {
-			const id = course.professor;
-			NEXTActions.fetchProfessor(actions, id);				
-		});
-*/
+		const {lectureId, courseId} = params;
+	
+		if(typeof lectureId !== "undefined")
+			NEXTActions.fetchLoadCourseAll(actions, lectureId);
+		else if(typeof courseId !== "undefined")
+			NEXTActions.fetchLoadCourseAllByCourseId(actions, courseId);
+			
 	}
 	renderHeader() {
 		const {name, professor, status} = this.props.state.lecture;
@@ -35,20 +34,35 @@ class CourseListPage extends Component {
 			
 		)
 	}
+	renderViewer() {
+		const courseId = this.props.params.courseId;
+		
+		if(!courseId)
+			return;
+			
+		return (
+			<Viewer/>
+		)
+	}
 	render() {
 		if(!("lecture" in this.props.state))
 			return "";
 		const lecture = this.props.state.lecture;
   		const {courses} = lecture;
+  		
+		console.log(this.props.state);
   		return (
+  		<div>
+  		{this.renderViewer()}
   		<div className="course-list-wrapper">
   			{this.renderHeader()}
   			<div className="course-list">
 	  			{courses.map(course =>
 		  			(<CourseCard key={course.id} lecture={lecture} course={course}/>)
 		  		)}
-		  		<AddCourseCard/>
+		  		<AddCourseCard actions={this.props.actions} lecture={lecture}/>
 		  	</div>
+  		</div>
   		</div>
   		)
   	}

@@ -1,9 +1,9 @@
 import * as Actions from '../constants/ActionTypes'
 
-const initialMainPageState = {
+const initialState = {
 	professors:[],
 }
-export default function mainPage(state = initialMainPageState, action) {
+export default function mainPage(state = initialState, action) {
 	switch(action.type ) {
 		case Actions.GET_COURSE_ALL:
 		case Actions.GET_COURSE_IN_PROFESSOR:

@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
 import CourseListPage from './CourseListPage'
-import MainPage from './MainPage'
+import Apply from './Apply'
 import Viewer from './Viewer'
-
+import MyLectures from './MyLectures'
 
 export default  combineReducers({
-  MainPage,
+  Apply,
   CourseListPage,
-  Viewer
+  Viewer,
+  MyLectures
 })

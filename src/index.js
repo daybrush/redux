@@ -32,7 +32,7 @@ render(
     <Router history={browserHistory}>
     <Route path="/" component={App} store={store}>
     	<IndexRoute component={mainPage} />
-      <Route path="/lecture/:lecutreId" component={CourseListPage} />
+      <Route path="/lecture/:lectureId" component={CourseListPage} />
       <Route path="/view/:courseId" component={CourseListPage} />      
     </Route>
   </Router>

@@ -16,14 +16,14 @@ export default class ProfessorBoard extends Component {
   }
 
   render() {
-    const { lectures, name } = this.props.professor
+    const { lectures, name, actions } = this.props.professor
 
     return (
     	<div className="professor-board">
     	{this.renderHeader(name)}  
     	<ul className="lecture-list">
           {lectures.map(lecture =>
-            <LectureCard course={lecture} key={lecture.id} />
+            <LectureCard lecture={lecture} key={lecture.id} actions={actions} />
           )}
 
     	</ul>

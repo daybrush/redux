@@ -15,7 +15,7 @@ export default function CourseListPage(state = initiallecturePageState, action) 
 			state.lecture = action.lecture;
 			return Object.assign({}, state);
 		case Actions.ADD_COURSE:
-			state.lecture.course.push(action.course)
+			state.lecture.courses.push(action.course);
 			return Object.assign({}, state);
 	}
 	return state;

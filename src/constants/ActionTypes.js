@@ -9,9 +9,8 @@ export const ADD_COURSE = 'ADD_COURSE'
 
 export const GET_LECTURE_ALL = 'GET_LECTURE_ALL'
 export const GET_COURSE = 'GET_COURSE'
-
-
-
+export const GET_MY_LECTURES = 'GET_MY_LECTURES'
+export const ADD_MY_LECTURE = 'ADD_MY_LECTURE'
 export const PAGE_LOADED = 'PAGE_LOADED'
 export const REQUIRE_UPDATE = 'REQUIRE_UPDATE'
 

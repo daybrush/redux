@@ -3,22 +3,34 @@ import * as NEXTActions from '../actions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import ProfessorList from '../components/ProfessorList'
+import Apply from './Apply'
+import LectureCard from '../components/LectureCard'
 
 class mainPage extends Component {
 	componentWillMount() {
 		const {_actions, actions} = this.props;
 
 		document.body.className = "";
-		NEXTActions.fetchLoadProfessorAll(actions).then(professors=> {
-			console.log(professors);
-		});
+		
+		NEXTActions.fetchLoadMyLectures(actions);
+		
 	}
 
   render() {
 	const {state, actions} = this.props
+	console.log(state);
     return (
     	<section className="content">
-        <ProfessorList professors={state.professors} actions={actions}/>
+    		신청한 강의 목록
+    		<ul className="lecture-list">
+    		{state.lectures.map(lecture => (
+    			
+    			<LectureCard isLink="true" lecture={lecture} />
+    		))}
+    		</ul>
+    		
+    		강의 신청하기
+        <Apply/>
         </section>
     )
   }
@@ -26,7 +38,7 @@ class mainPage extends Component {
 
 
 const mapStateToProps = state => {
-	return {state: state.MainPage}
+	return {state: state.MyLectures}
 }
 
 const mapDispatchToProps = dispatch => {
